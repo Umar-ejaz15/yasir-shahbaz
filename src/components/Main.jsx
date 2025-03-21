@@ -10,7 +10,7 @@ const Main = () => {
         <div className="flex items-center justify-center text-center gap-8">
           <div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none mb-4">
-              Yasir Shabaz <span className="text-gray-400">|</span>{" "}
+              Yasir Shahbaz <span className="text-gray-400">|</span>{" "}
               <span className="text-green-500">
                 Data Scientist & Product Enthusiast
               </span>
