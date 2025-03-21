@@ -111,7 +111,7 @@ const Projects = () => {
               <h3 className="text-xl sm:text-2xl mt-6 font-bold mb-3 text-emerald-400">
                 {project.title}
               </h3>
-              <p className="text-gray-300 flex-grow text-sm sm:text-base">{project.description}</p>
+              <p className="text-gray-300 flex-grow text-md sm:text-base">{project.description}</p>
               <div className="flex flex-wrap gap-2 mt-4">
                 {project.tags.map((tag, index) => (
                   <span
