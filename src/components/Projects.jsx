@@ -54,7 +54,7 @@ const Projects = () => {
       title: " Data Analysis",
       description:
         "In-depth analysis of  data using Python, including content categorization, regional preferences, and viewing trends to understand audience engagement and content performance metrics.",
-      image: "/public/projects/7.jpg",
+      image: "/projects/7.jpg",
       tags: ["Python", "Data Analysis", "Pandas", "Visualization"],
     },
   ];
