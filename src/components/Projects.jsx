@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, EffectCoverflow } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
-import { Pagination, EffectCoverflow } from "swiper/modules";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -50,85 +50,96 @@ const Projects = () => {
       tags: ["Python", "Data Analysis", "Pandas", "Visualization"],
     },
     {
-      id: 6,
-      title: " Data Analysis",
+      id: 7,
+      title: "Data Analysis",
       description:
-        "In-depth analysis of  data using Python, including content categorization, regional preferences, and viewing trends to understand audience engagement and content performance metrics.",
+        "In-depth analysis of data using Python, including content categorization, regional preferences, and viewing trends to understand audience engagement and content performance metrics.",
       image: "/projects/7.jpg",
       tags: ["Python", "Data Analysis", "Pandas", "Visualization"],
     },
   ];
 
   return (
-    <section className="w-full h-auto px-4 sm:px-7 md:px-20 py-8 sm:py-16" id="projects">
+    <section
+      className="w-full h-auto px-4 sm:px-7 md:px-20 py-8 sm:py-16"
+      id="projects"
+    >
       <h1 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-10 text-white text-center">
         My Projects
       </h1>
-      <Swiper
-        effect="cards"
-        grabCursor={true}
-        centeredSlides={true}
-        initialSlide={1}
-        slidesPerView={3}
-        coverflowEffect={{
-          slideShadows: true,
-        }}
-        pagination={{
-          clickable: true,
-          dynamicBullets: true,
-        }}
-        className="mySwiper !pb-12"
-      >
-        {projects.map((project) => (
-          <SwiperSlide key={project.id} className="!w-[300px] sm:!w-[350px]">
-            <div 
-              className="bg-zinc-950 hover:bg-zinc-900 transition-all duration-300 text-white rounded-xl shadow-lg p-2 h-[450px] flex flex-col ju gap-4"
-              onClick={() => setSelectedProject(project)}
+      <div className="flex justify-center items-center">
+        <Swiper
+          effect={"coverflow"}
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={"auto"}
+          coverflowEffect={{
+            rotate: 10,
+            stretch: 0,
+            depth: 100,
+            modifier: 2.5,
+            slideShadows: true,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[EffectCoverflow, Pagination]}
+          className="mySwiper"
+        >
+          {projects.map((project) => (
+            <SwiperSlide
+              key={project.id}
+              className="!w-[280px] sm:!w-[320px] md:!w-[350px]"
             >
-              <div className="overflow-hidden rounded-lg h-48">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-              <div className="flex flex-col flex-grow">
-                <h3 className="text-xl font-semibold text-emerald-400 mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  {project.tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="px-2.5 py-1 bg-zinc-800 text-emerald-400 rounded-md text-xs font-medium hover:bg-emerald-400 hover:text-zinc-900 transition-colors duration-200"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+              <div
+                className="bg-zinc-950 hover:bg-zinc-900 transition-all duration-300 text-white rounded-xl shadow-lg p-4 h-[450px] flex flex-col justify-center items-center cursor-pointer"
+                onClick={() => setSelectedProject(project)}
+              >
+                <div className="overflow-hidden rounded-lg h-48 w-full">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="flex flex-col flex-grow mt-4">
+                  <h3 className="text-xl font-semibold text-emerald-400 mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm leading-relaxed mb-4 line-clamp-4">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {project.tags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="px-2.5 py-1 bg-zinc-800 text-emerald-400 rounded-md text-xs font-medium hover:bg-emerald-400 hover:text-zinc-900 transition-colors duration-200"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
 
       {selectedProject && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
-          <div className="relative max-w-4xl w-full mx-4">
+        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-4xl w-full">
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute -top-12 right-0 text-white text-4xl hover:text-emerald-400"
+              className="absolute -top-12 right-0 text-white text-4xl hover:text-emerald-400 focus:outline-none"
             >
               ×
             </button>
             <img
               src={selectedProject.image}
               alt={selectedProject.title}
-              className="w-full h-auto rounded-lg"
+              className="w-full h-auto rounded-lg shadow-2xl"
             />
           </div>
         </div>
