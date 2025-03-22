@@ -17,7 +17,7 @@ const Main = () => {
               {" "}
               <span className="text-green-500">& Product Enthusiast</span>
             </h1>
-            <p className="text-gray-300 text-lg sm:text-xl md:text-2xl lg:text-2xl w-2/3 mx-auto ">
+            <p className="text-gray-300 text-lg sm:text-xl md:text-2xl lg:text-2xl  md:w-2/3 mx-auto ">
               Transforming complex data into meaningful insights and innovative
               products using Python, Machine Learning & Analytics
             </p>
