@@ -11,11 +11,13 @@ const Main = () => {
           <div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none mb-4">
               Yasir Shahbaz <span className="text-gray-400">|</span>{" "}
-              <span className="text-green-500">
-                Data Scientist & Product Enthusiast
-              </span>
+              <span className="text-green-500">Data Scientist</span>
             </h1>
-            <p className="text-gray-300 text-lg sm:text-xl md:text-2xl lg:text-3xl ">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none mb-4">
+              {" "}
+              <span className="text-green-500">& Product Enthusiast</span>
+            </h1>
+            <p className="text-gray-300 text-lg sm:text-xl md:text-2xl lg:text-2xl w-2/3 mx-auto ">
               Transforming complex data into meaningful insights and innovative
               products using Python, Machine Learning & Analytics
             </p>

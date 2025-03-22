@@ -38,9 +38,9 @@ const expertiseData = [
 
 const Expertise = () => {
   return (
-    <section className="container mx-auto py-16 px-7 md:px-20">
-      <div className="flex flex-col md:flex-row gap-8">
-        <div className="md:w-1/3">
+    <section className=" mx-auto py-16 px-7 md:px-20">
+      <div className="flex flex-col justify-center items-center  md:flex-row gap-8">
+        <div className="left  flex flex-col  md:w-1/3 bg-zinc-900 px-10 py-4 rounded-lg shadow-2xl">
           <h2 className="text-4xl font-bold text-white mb-6">What I Do</h2>
           <p className="text-gray-300">
             Specialized in data analysis and visualization, utilizing Python,
@@ -48,8 +48,8 @@ const Expertise = () => {
             meaningful insights.
           </p>
         </div>
-        <div className="md:w-2/3">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="right md:w-2/3">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {expertiseData.map((expertise, index) => (
               <Tilt key={index}>
                 <div

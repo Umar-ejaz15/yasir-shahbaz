@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -6,8 +6,9 @@ import "swiper/css/effect-coverflow";
 import { Pagination, EffectCoverflow } from "swiper/modules";
 
 const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+
   const projects = [
-   
     {
       id: 1,
       title: "Olympic Games Dashboard",
@@ -48,6 +49,14 @@ const Projects = () => {
       image: "/projects/Uber data analysis with python.jpg",
       tags: ["Python", "Data Analysis", "Pandas", "Visualization"],
     },
+    {
+      id: 6,
+      title: " Data Analysis",
+      description:
+        "In-depth analysis of  data using Python, including content categorization, regional preferences, and viewing trends to understand audience engagement and content performance metrics.",
+      image: "/public/projects/7.jpg",
+      tags: ["Python", "Data Analysis", "Pandas", "Visualization"],
+    },
   ];
 
   return (
@@ -56,76 +65,74 @@ const Projects = () => {
         My Projects
       </h1>
       <Swiper
-        effect="coverflow"
+        effect="cards"
         grabCursor={true}
         centeredSlides={true}
         initialSlide={1}
-        slidesPerView="auto"
+        slidesPerView={3}
         coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
           slideShadows: true,
-        }}
-        breakpoints={{
-          320: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
-          640: {
-            slidesPerView: 1.5,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-          },
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-          1280: {
-            slidesPerView: 3.5,
-            spaceBetween: 40,
-          },
         }}
         pagination={{
           clickable: true,
           dynamicBullets: true,
         }}
-        modules={[Pagination, EffectCoverflow]}
         className="mySwiper !pb-12"
       >
         {projects.map((project) => (
           <SwiperSlide key={project.id} className="!w-[300px] sm:!w-[350px]">
-            <div className="bg-zinc-950 hover:bg-zinc-900 transition-all duration-500 text-white rounded-xl shadow-2xl p-4 h-[450px] flex flex-col transform hover:-translate-y-2 hover:shadow-emerald-500/20">
-              <div className="overflow-hidden rounded-lg">
+            <div 
+              className="bg-zinc-950 hover:bg-zinc-900 transition-all duration-300 text-white rounded-xl shadow-lg p-2 h-[450px] flex flex-col ju gap-4"
+              onClick={() => setSelectedProject(project)}
+            >
+              <div className="overflow-hidden rounded-lg h-48">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover rounded-lg hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105"
                   loading="lazy"
                 />
               </div>
-              <h3 className="text-xl sm:text-2xl mt-6 font-bold mb-3 text-emerald-400">
-                {project.title}
-              </h3>
-              <p className="text-gray-300 flex-grow text-md sm:text-base">{project.description}</p>
-              <div className="flex flex-wrap gap-2 mt-4">
-                {project.tags.map((tag, index) => (
-                  <span
-                    key={index}
-                    className="px-3 py-1 bg-zinc-900 text-emerald-400 rounded-full text-xs sm:text-sm hover:bg-emerald-400 hover:text-zinc-900 transition-colors duration-300"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              <div className="flex flex-col flex-grow">
+                <h3 className="text-xl font-semibold text-emerald-400 mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {project.tags.map((tag, index) => (
+                    <span
+                      key={index}
+                      className="px-2.5 py-1 bg-zinc-800 text-emerald-400 rounded-md text-xs font-medium hover:bg-emerald-400 hover:text-zinc-900 transition-colors duration-200"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
+
+      {selectedProject && (
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+          <div className="relative max-w-4xl w-full mx-4">
+            <button
+              onClick={() => setSelectedProject(null)}
+              className="absolute -top-12 right-0 text-white text-4xl hover:text-emerald-400"
+            >
+              ×
+            </button>
+            <img
+              src={selectedProject.image}
+              alt={selectedProject.title}
+              className="w-full h-auto rounded-lg"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 };
