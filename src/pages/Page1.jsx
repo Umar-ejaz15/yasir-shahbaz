@@ -7,8 +7,10 @@ import Expertise from "../components/Expertise";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import Cta from "../components/Cta";
+import LocomotiveScroll from "locomotive-scroll";
 
 const Page1 = () => {
+  const locomotiveScroll = new LocomotiveScroll();
   return (
     <div className="w-full min-h-screen flex flex-col gap-5   bg-black text-white ">
       <Navbar />
