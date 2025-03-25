@@ -18,7 +18,7 @@ const Projects = () => {
       tags: ["Power BI", "Data Visualization", "Analytics"],
     },
     {
-      id: 3,
+      id: 2,
       title: "Hospital Management Dashboard",
       description:
         "Advanced healthcare analytics dashboard providing real-time insights into patient care, resource allocation, and hospital performance metrics.",
@@ -26,7 +26,7 @@ const Projects = () => {
       tags: ["Power BI", "Healthcare Analytics", "Dashboard"],
     },
     {
-      id: 4,
+      id: 3,
       title: "Amazon Sales Analytics",
       description:
         "Comprehensive sales analysis dashboard for Amazon marketplace, tracking revenue trends, product performance, and customer behavior patterns.",
@@ -34,7 +34,7 @@ const Projects = () => {
       tags: ["Power BI", "E-commerce", "Sales Analytics"],
     },
     {
-      id: 5,
+      id: 4,
       title: "Financial Performance Dashboard",
       description:
         "Dynamic financial analytics platform showcasing key performance indicators, revenue metrics, and market trends analysis.",
@@ -42,7 +42,7 @@ const Projects = () => {
       tags: ["Data Analysis", "Finance", "Visualization"],
     },
     {
-      id: 6,
+      id: 5,
       title: "Uber Data Analysis",
       description:
         "Comprehensive analysis of Uber ride data using Python, featuring data cleaning, visualization, and pattern recognition to derive meaningful insights about user behavior and service optimization.",
@@ -50,7 +50,7 @@ const Projects = () => {
       tags: ["Python", "Data Analysis", "Pandas", "Visualization"],
     },
     {
-      id: 7,
+      id: 6,
       title: "Data Analysis",
       description:
         "In-depth analysis of data using Python, including content categorization, regional preferences, and viewing trends to understand audience engagement and content performance metrics.",
@@ -73,13 +73,13 @@ const Projects = () => {
           grabCursor={true}
           centeredSlides={true}
           slidesPerView={"auto"}
+          initialSlide={1}
           coverflowEffect={{
             rotate: 10,
             stretch: 0,
             depth: 100,
             modifier: 2.5,
-            slideShadows: true,
-          }}
+            slideShadows: true,          }}
           pagination={{
             clickable: true,
           }}
@@ -89,13 +89,13 @@ const Projects = () => {
           {projects.map((project) => (
             <SwiperSlide
               key={project.id}
-              className="!w-[280px] sm:!w-[320px] md:!w-[350px]"
+              className="!w-[280px] sm:!w-[320px] md:!w-[500px]"
             >
               <div
-                className="bg-zinc-950 hover:bg-zinc-900 transition-all duration-300 text-white rounded-xl shadow-lg p-4 h-[450px] flex flex-col justify-center items-center cursor-pointer"
+                className="bg-zinc-950 hover:bg-zinc-900 transition-all duration-300 text-white rounded-xl shadow-lg p-4 h-[600px] flex flex-col cursor-pointer"
                 onClick={() => setSelectedProject(project)}
               >
-                <div className="overflow-hidden rounded-lg h-48 w-full">
+                <div className="overflow-hidden rounded-lg h-[300px] w-full">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -104,17 +104,17 @@ const Projects = () => {
                   />
                 </div>
                 <div className="flex flex-col flex-grow mt-4">
-                  <h3 className="text-xl font-semibold text-emerald-400 mb-2">
+                  <h3 className="text-2xl font-semibold text-emerald-400 mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-300 text-sm leading-relaxed mb-4 line-clamp-4">
+                  <p className="text-gray-300 text-xl leading-relaxed mb-4">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mt-auto">
                     {project.tags.map((tag, index) => (
                       <span
                         key={index}
-                        className="px-2.5 py-1 bg-zinc-800 text-emerald-400 rounded-md text-xs font-medium hover:bg-emerald-400 hover:text-zinc-900 transition-colors duration-200"
+                        className="px-2.5 py-1 bg-zinc-800 text-emerald-400 rounded-md text-md font-medium hover:bg-emerald-400 hover:text-zinc-900 transition-colors duration-200"
                       >
                         {tag}
                       </span>
