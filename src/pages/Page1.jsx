@@ -8,6 +8,7 @@ import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import Cta from "../components/Cta";
 import LocomotiveScroll from "locomotive-scroll";
+import Reviews from "../components/Reviews";
 
 const Page1 = () => {
   const locomotiveScroll = new LocomotiveScroll();
@@ -20,6 +21,7 @@ const Page1 = () => {
       <Expertise />
       <Skills />
       <Projects />
+      <Reviews/>
       <Cta />
     </div>
   );

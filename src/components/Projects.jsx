@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, EffectCoverflow } from "swiper/modules";
+import { Pagination, EffectCoverflow, Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
+import "swiper/css/navigation";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -74,16 +75,22 @@ const Projects = () => {
           centeredSlides={true}
           slidesPerView={"auto"}
           initialSlide={1}
+          navigation={true}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
           coverflowEffect={{
             rotate: 10,
             stretch: 0,
             depth: 100,
             modifier: 2.5,
-            slideShadows: true,          }}
+            slideShadows: true,          
+          }}
           pagination={{
             clickable: true,
           }}
-          modules={[EffectCoverflow, Pagination]}
+          modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
           className="mySwiper"
         >
           {projects.map((project) => (
@@ -92,10 +99,10 @@ const Projects = () => {
               className="!w-[280px] sm:!w-[320px] md:!w-[500px]"
             >
               <div
-                className="bg-zinc-950 hover:bg-zinc-900 transition-all duration-300 text-white rounded-xl shadow-lg p-4 h-[600px] flex flex-col cursor-pointer"
+                className="bg-zinc-950 hover:bg-zinc-900 transition-all duration-300 text-white rounded-xl shadow-lg p-4 h-[500px] md:h-[600px] flex flex-col cursor-pointer"
                 onClick={() => setSelectedProject(project)}
               >
-                <div className="overflow-hidden rounded-lg h-[300px] w-full">
+                <div className="overflow-hidden rounded-lg h-[300px] md:h-[300px] w-full">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -107,7 +114,7 @@ const Projects = () => {
                   <h3 className="text-2xl font-semibold text-emerald-400 mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-300 text-xl leading-relaxed mb-4">
+                  <p className="text-gray-300 text-md md:text-xl leading-relaxed mb-4">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mt-auto">
@@ -139,7 +146,7 @@ const Projects = () => {
             <img
               src={selectedProject.image}
               alt={selectedProject.title}
-              className="w-full h-auto rounded-lg shadow-2xl"
+              className="w-full h-auto object-center object-cover md:h-[500px] rounded-lg shadow-2xl"
             />
           </div>
         </div>

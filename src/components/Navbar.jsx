@@ -55,7 +55,7 @@ const Navbar = () => {
             onClick={opencv}
             className="px-8 cursor-pointer md:px-10 py-2.5 rounded-lg bg-green-500 text-white font-semibold hover:bg-green-600 transition duration-300 w-full md:w-auto hover:shadow-lg hover:shadow-green-500/20"
           >
-            Resume
+            Download CV
           </button>
         </div>
       </div>

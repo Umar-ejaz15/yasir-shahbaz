@@ -50,7 +50,7 @@ const Cta = () => {
           <div className="flex gap-3 sm:gap-5">
             <motion.a 
               whileHover={{ scale: 1.1 }}
-              href="https://linkedin.com/in/yasir-ali-dev" 
+              href="https://www.linkedin.com/in/yasir-shahbaz-a115312b7/" 
               target="_blank" 
               rel="noopener noreferrer"
             >
@@ -58,7 +58,7 @@ const Cta = () => {
             </motion.a>
             <motion.a 
               whileHover={{ scale: 1.1 }}
-              href="https://github.com/yasirali-dev" 
+              href="https://github.com/SyedYasirShahbaz1310" 
               target="_blank" 
               rel="noopener noreferrer"
             >
