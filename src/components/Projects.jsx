@@ -62,10 +62,10 @@ const Projects = () => {
 
   return (
     <section
-      className="w-full h-auto px-4 sm:px-7 md:px-20 py-8 sm:py-16"
+      className="w-full h-auto px-2 sm:px-4 md:px-8 lg:px-20 py-4 sm:py-8 lg:py-16"
       id="projects"
     >
-      <h1 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-10 text-white text-center">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-8 lg:mb-10 text-white text-center">
         My Projects
       </h1>
       <div className="flex justify-center items-center">
@@ -96,13 +96,13 @@ const Projects = () => {
           {projects.map((project) => (
             <SwiperSlide
               key={project.id}
-              className="!w-[280px] sm:!w-[320px] md:!w-[500px]"
+              className="!w-[250px] sm:!w-[320px] md:!w-[400px] lg:!w-[500px]"
             >
               <div
-                className="bg-zinc-950 hover:bg-zinc-900 transition-all duration-300 text-white rounded-xl shadow-lg p-4 h-[500px] md:h-[600px] flex flex-col cursor-pointer"
+                className="bg-zinc-950 hover:bg-zinc-900 transition-all duration-300 text-white rounded-xl shadow-lg p-3 sm:p-4 h-[400px] sm:h-[500px] md:h-[550px] lg:h-[600px] flex flex-col cursor-pointer"
                 onClick={() => setSelectedProject(project)}
               >
-                <div className="overflow-hidden rounded-lg h-[300px] md:h-[300px] w-full">
+                <div className="overflow-hidden rounded-lg h-[200px] sm:h-[250px] md:h-[300px] w-full">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -110,18 +110,18 @@ const Projects = () => {
                     loading="lazy"
                   />
                 </div>
-                <div className="flex flex-col flex-grow mt-4">
-                  <h3 className="text-2xl font-semibold text-emerald-400 mb-2">
+                <div className="flex flex-col flex-grow mt-2 sm:mt-4">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-emerald-400 mb-1 sm:mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-300 text-md md:text-xl leading-relaxed mb-4">
+                  <p className="text-gray-300 text-sm sm:text-md md:text-lg lg:text-xl leading-relaxed mb-2 sm:mb-4">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mt-auto">
+                  <div className="flex flex-wrap gap-1 sm:gap-2 mt-auto">
                     {project.tags.map((tag, index) => (
                       <span
                         key={index}
-                        className="px-2.5 py-1 bg-zinc-800 text-emerald-400 rounded-md text-md font-medium hover:bg-emerald-400 hover:text-zinc-900 transition-colors duration-200"
+                        className="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-zinc-800 text-emerald-400 rounded-md text-xs sm:text-sm md:text-md font-medium hover:bg-emerald-400 hover:text-zinc-900 transition-colors duration-200"
                       >
                         {tag}
                       </span>
@@ -135,24 +135,23 @@ const Projects = () => {
       </div>
 
       {selectedProject && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4">
+        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-2 sm:p-4">
           <div className="relative max-w-4xl w-full">
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute -top-12 right-0 text-white text-4xl hover:text-emerald-400 focus:outline-none"
+              className="absolute -top-8 sm:-top-12 right-0 text-white text-3xl sm:text-4xl hover:text-emerald-400 focus:outline-none"
             >
               ×
             </button>
             <img
               src={selectedProject.image}
               alt={selectedProject.title}
-              className="w-full h-auto object-center object-cover md:h-[500px] rounded-lg shadow-2xl"
+              className="w-full h-auto object-center object-cover sm:h-[400px] md:h-[500px] rounded-lg shadow-2xl"
             />
           </div>
         </div>
       )}
-    </section>
-  );
+    </section>  );
 };
 
 export default Projects;
