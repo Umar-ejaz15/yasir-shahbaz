@@ -21,7 +21,7 @@ const Page1 = () => {
       <Expertise />
       <Skills />
       <Projects />
-      <Reviews/>
+      {/* <Reviews/> */}
       <Cta />
     </div>
   );
