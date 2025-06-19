@@ -134,7 +134,7 @@ const Skills = () => {
           Data Analysis Skills
         </h1>
         <motion.div
-          initial={{ y: 50}}
+          initial={{ y: 50 }}
           animate={{ y: 0 }}
           transition={{ duration: 1 }}
           className="grid md:grid-cols-3 gap-8"
@@ -142,15 +142,16 @@ const Skills = () => {
           {skillsData.map((skill, index) => (
             <motion.div
               initial={{ opacity: 0, y: 50 }}
-              whileInView={{ y: 0 }}
-              viewport={{ once: false }}
+              animate={{ opacity: 1 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
               transition={{ 
                 duration: 0.5,
                 delay: index * 0.1,
                 ease: "easeOut"
               }}
               key={index}
-              className="bg-zinc-950 hover:bg-zinc-900 backdrop-blur-lg rounded-xl p-6 hover:transform hover:scale-105 transition-all "
+              className="bg-zinc-950 hover:bg-zinc-900 backdrop-blur-lg rounded-xl p-6 hover:transform hover:scale-105 transition-all"
             >
               <div className="flex items-center justify-center mb-4">
                 <skill.icon
