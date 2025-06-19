@@ -134,15 +134,15 @@ const Skills = () => {
           Data Analysis Skills
         </h1>
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ y: 50}}
+          animate={{ y: 0 }}
           transition={{ duration: 1 }}
           className="grid md:grid-cols-3 gap-8"
         >
           {skillsData.map((skill, index) => (
             <motion.div
               initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              whileInView={{ y: 0 }}
               viewport={{ once: false }}
               transition={{ 
                 duration: 0.5,

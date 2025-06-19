@@ -26,17 +26,17 @@ const Projects = () => {
       image: "/projects/Hospital datadashbord with power.jpg",
       tags: ["Power BI", "Healthcare Analytics", "Dashboard"],
     },
-    {
-      id: 3,
-      title: "Amazon Sales Analytics",
-      description:
-        "Comprehensive sales analysis dashboard for Amazon marketplace, tracking revenue trends, product performance, and customer behavior patterns.",
-      image: "/projects/Amzon Sales Dashboard with Power BBI.jpg",
-      tags: ["Power BI", "E-commerce", "Sales Analytics"],
-    },
+    // {
+    //   id: 3,
+    //   title: "Amazon Sales Analytics",
+    //   description:
+    //     "Comprehensive sales analysis dashboard for Amazon marketplace, tracking revenue trends, product performance, and customer behavior patterns.",
+    //   image: "/projects/Amzon Sales Dashboard with Power BBI.jpg",
+    //   tags: ["Power BI", "E-commerce", "Sales Analytics"],
+    // },
     {
       id: 4,
-      title: "Financial Performance Dashboard",
+      title: "Credit Card Transaction Report",
       description:
         "Dynamic financial analytics platform showcasing key performance indicators, revenue metrics, and market trends analysis.",
       image: "/projects/Screenshot 2025-01-15 180212.jpg",
@@ -44,25 +44,33 @@ const Projects = () => {
     },
     {
       id: 5,
-      title: "Uber Data Analysis",
+      title: "PSL Data Analysis",
       description:
         "Comprehensive analysis of Uber ride data using Python, featuring data cleaning, visualization, and pattern recognition to derive meaningful insights about user behavior and service optimization.",
-      image: "/projects/Uber data analysis with python.jpg",
+      image: "/projects/psl.jpg",
       tags: ["Python", "Data Analysis", "Pandas", "Visualization"],
     },
     {
       id: 6,
-      title: "Data Analysis",
+      title: "HR Analytist Dashboard",
       description:
         "In-depth analysis of data using Python, including content categorization, regional preferences, and viewing trends to understand audience engagement and content performance metrics.",
-      image: "/projects/7.jpg",
+      image: "/projects/hr.jpg",
+      tags: ["Python", "Data Analysis", "Pandas", "Visualization"],
+    },
+     {
+      id: 7,
+      title: "Shopify Sales DashBoard",
+      description:
+        "In-depth analysis of data using Python, including content categorization, regional preferences, and viewing trends to understand audience engagement and content performance metrics.",
+      image: "/projects/sale.jpg",
       tags: ["Python", "Data Analysis", "Pandas", "Visualization"],
     },
   ];
 
   return (
     <section
-      className="w-full h-auto px-2 sm:px-4 md:px-8 lg:px-20 py-4 sm:py-8 lg:py-16"
+      className="w-full h-auto px-2 sm:px-4 md:px-8 lg:px-20 py-4 sm:py-8 lg:py-16 bg-black"
       id="projects"
     >
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-8 lg:mb-10 text-white text-center">
@@ -99,7 +107,7 @@ const Projects = () => {
               className="!w-[250px] sm:!w-[320px] md:!w-[400px] lg:!w-[500px]"
             >
               <div
-                className="bg-zinc-950 hover:bg-zinc-900 transition-all duration-300 text-white rounded-xl shadow-lg p-3 sm:p-4 h-[400px] sm:h-[500px] md:h-[550px] lg:h-[600px] flex flex-col cursor-pointer"
+                className="bg-black hover:bg-purple-900 transition-all duration-300 text-white rounded-xl shadow-lg p-3 sm:p-4 h-[400px] sm:h-[500px] md:h-[550px] lg:h-[600px] flex flex-col cursor-pointer"
                 onClick={() => setSelectedProject(project)}
               >
                 <div className="overflow-hidden rounded-lg h-[200px] sm:h-[250px] md:h-[300px] w-full">
@@ -111,17 +119,17 @@ const Projects = () => {
                   />
                 </div>
                 <div className="flex flex-col flex-grow mt-2 sm:mt-4">
-                  <h3 className="text-xl sm:text-2xl font-semibold text-emerald-400 mb-1 sm:mb-2">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-purple-400 mb-1 sm:mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-300 text-sm sm:text-md md:text-lg lg:text-xl leading-relaxed mb-2 sm:mb-4">
+                  <p className="text-white text-sm sm:text-md md:text-lg lg:text-xl leading-relaxed mb-2 sm:mb-4">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-1 sm:gap-2 mt-auto">
                     {project.tags.map((tag, index) => (
                       <span
                         key={index}
-                        className="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-zinc-800 text-emerald-400 rounded-md text-xs sm:text-sm md:text-md font-medium hover:bg-emerald-400 hover:text-zinc-900 transition-colors duration-200"
+                        className="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-black text-purple-400 rounded-md text-xs sm:text-sm md:text-md font-medium hover:bg-purple-400 hover:text-black transition-colors duration-200"
                       >
                         {tag}
                       </span>
@@ -139,7 +147,7 @@ const Projects = () => {
           <div className="relative max-w-4xl w-full">
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute -top-8 sm:-top-12 right-0 text-white text-3xl sm:text-4xl hover:text-emerald-400 focus:outline-none"
+              className="absolute -top-8 sm:-top-12 right-0 text-white text-3xl sm:text-4xl hover:text-purple-400 focus:outline-none"
             >
               ×
             </button>
@@ -151,7 +159,8 @@ const Projects = () => {
           </div>
         </div>
       )}
-    </section>  );
+    </section>
+  );
 };
 
 export default Projects;
