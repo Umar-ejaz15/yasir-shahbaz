@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gradient-to-r from-zinc-950 to-zinc-900 px-4 md:px-10 py-4 flex items-center justify-between backdrop-blur-md border-b border-zinc-800/30 w-full fixed top-0 z-50 text-white">
+    <nav className="bg-gradient-to-r from-zinc-950 to-zinc-900 px-4 md:px-10 py-4 flex items-center justify-between backdrop-blur-md border-b border-zinc-800/30 w-full sticky top-0 z-50 text-white">
       <div className="left flex items-center">
         <img src="/logo.jpg" alt="Logo" className="h-12 w-12 rounded-full ring-2 ring-green-500/50 hover:ring-green-500 transition-all duration-300" />
       </div>
