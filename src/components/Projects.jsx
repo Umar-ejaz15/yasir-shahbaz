@@ -107,7 +107,7 @@ const Projects = () => {
               className="!w-[250px] sm:!w-[320px] md:!w-[400px] lg:!w-[500px]"
             >
               <div
-                className="bg-black hover:bg-purple-900 transition-all duration-300 text-white rounded-xl shadow-lg p-3 sm:p-4 h-[400px] sm:h-[500px] md:h-[550px] lg:h-[600px] flex flex-col cursor-pointer"
+                className="bg-black hover:bg-green-900 transition-all duration-300 text-white rounded-xl shadow-lg p-3 sm:p-4 h-[400px] sm:h-[500px] md:h-[550px] lg:h-[600px] flex flex-col cursor-pointer"
                 onClick={() => setSelectedProject(project)}
               >
                 <div className="overflow-hidden rounded-lg h-[200px] sm:h-[250px] md:h-[300px] w-full">
@@ -119,7 +119,7 @@ const Projects = () => {
                   />
                 </div>
                 <div className="flex flex-col flex-grow mt-2 sm:mt-4">
-                  <h3 className="text-xl sm:text-2xl font-semibold text-purple-400 mb-1 sm:mb-2">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-green-400 mb-1 sm:mb-2">
                     {project.title}
                   </h3>
                   <p className="text-white text-sm sm:text-md md:text-lg lg:text-xl leading-relaxed mb-2 sm:mb-4">
@@ -129,7 +129,7 @@ const Projects = () => {
                     {project.tags.map((tag, index) => (
                       <span
                         key={index}
-                        className="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-black text-purple-400 rounded-md text-xs sm:text-sm md:text-md font-medium hover:bg-purple-400 hover:text-black transition-colors duration-200"
+                        className="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-black text-green-400 rounded-md text-xs sm:text-sm md:text-md font-medium hover:bg-green-400 hover:text-black transition-colors duration-200"
                       >
                         {tag}
                       </span>
@@ -147,7 +147,7 @@ const Projects = () => {
           <div className="relative max-w-4xl w-full">
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute -top-8 sm:-top-12 right-0 text-white text-3xl sm:text-4xl hover:text-purple-400 focus:outline-none"
+              className="absolute -top-8 sm:-top-12 right-0 text-white text-3xl sm:text-4xl hover:text-green-400 focus:outline-none"
             >
               ×
             </button>

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Main = () => {
   return (
-    <main className="h-screen px-4 sm:px-7 lg:px-20">
+    <main className="h-screen px-4 sm:px-7 lg:px-20 bg-black">
       <div className="w-full h-full flex flex-col justify-center relative">
         <Gradient />
         <motion.div 
@@ -22,7 +22,7 @@ const Main = () => {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none mb-2"
               >
-                Yasir Shahbaz{" "}
+                Hi, I'm Yasir{" "}
                 <motion.span 
                   animate={{ opacity: [1, 0, 1] }}
                   transition={{ duration: 1, repeat: Infinity }}
@@ -34,7 +34,7 @@ const Main = () => {
                   initial={{ y: 300, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 1, delay: 0.3 }}
-                  className="text-green-500"
+                  className="text-green-400"
                 >
                   Data Scientist
                 </motion.span>
@@ -53,11 +53,11 @@ const Main = () => {
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none mb-2"
               >
                 <motion.span 
-                  className="text-green-500"
+                  className="text-green-400"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
-                  & Product Enthusiast
+                  Transforming Data into Insights
                 </motion.span>
               </motion.h1>
             </motion.div>
@@ -65,25 +65,28 @@ const Main = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="text-gray-300 text-lg sm:text-xl md:text-2xl lg:text-2xl md:w-2/3 mx-auto mt-2"
+              className="text-gray-300 text-lg sm:text-xl md:text-2xl lg:text-2xl md:w-3/4 mx-auto mt-4 leading-relaxed"
             >
-              Transforming complex data into meaningful insights and innovative
-              products using Python, Machine Learning & Analytics
+              Turning complex data into actionable business insights through advanced 
+              analytics and statistical modeling. Expert in data visualization, 
+              predictive analytics, and developing data-driven solutions that drive 
+              strategic decision-making.
             </motion.p>
             <motion.button 
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, backgroundColor: "#22c55e" }}
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.3 }}
-              className="px-10 py-2 mt-6 bg-green-500 hover:bg-green-600 cursor-pointer rounded-md font-medium text-xl"
+              className="px-10 py-3 mt-8  border border-green-600 bg-green-500 hover:bg-green-600 cursor-pointer rounded-full font-medium text-xl shadow-lg"
             >
               <a
                 href="https://calendly.com/workwithyasir13/30min"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="flex items-center gap-2"
               >
-                Currently Available
+                Let's Connect
               </a>
             </motion.button>
           </div>
