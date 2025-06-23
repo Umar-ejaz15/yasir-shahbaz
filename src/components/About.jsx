@@ -41,7 +41,7 @@ const About = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: false }}
-      className="w-full min-h-screen bg-black flex flex-col md:flex-row gap-12 items-center px-8 md:px-24 py-20"
+      className="w-full min-h-screen flex flex-col md:flex-row gap-12 items-center px-8 md:px-24 py-20"
     >
       <div className="w-full flex flex-col gap-10">
         <motion.h2

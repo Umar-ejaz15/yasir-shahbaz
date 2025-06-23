@@ -13,7 +13,7 @@ import Reviews from "../components/Reviews";
 const Page1 = () => {
   const locomotiveScroll = new LocomotiveScroll();
   return (
-    <div className="w-full min-h-screen flex flex-col gap-5   bg-black text-white ">
+    <div className="w-full  bg-black min-h-screen flex flex-col gap-5    text-white ">
       <Navbar />
       <Main />
       <About />

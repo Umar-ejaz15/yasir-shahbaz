@@ -70,7 +70,7 @@ const Projects = () => {
 
   return (
     <section
-      className="w-full h-auto px-2 sm:px-4 md:px-8 lg:px-20 py-4 sm:py-8 lg:py-16 bg-black"
+      className="w-full h-auto px-2 sm:px-4 md:px-8 lg:px-20 py-4 sm:py-8 lg:py-16 "
       id="projects"
     >
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-8 lg:mb-10 text-white text-center">

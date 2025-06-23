@@ -38,7 +38,7 @@ const expertiseData = [
 
 const Expertise = () => {
   return (
-    <section className="bg-black mx-auto py-20 px-7 md:px-20">
+    <section className=" mx-auto py-20 px-7 md:px-20">
       <div className="flex flex-col justify-center items-center md:flex-row gap-12">
         <div className="left flex flex-col md:w-1/3 bg-zinc-950 px-10 py-8 rounded-2xl shadow-[0_0_15px_rgba(34,197,94,0.2)] transform hover:scale-105 transition-all duration-500">
           <h2 className="text-5xl font-bold text-green-500 mb-6 animate-fade-in">What I Do</h2>

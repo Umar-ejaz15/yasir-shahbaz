@@ -128,7 +128,7 @@ const skillsData = [
 
 const Skills = () => {
   return (
-    <div className="w-full min-h-screen py-16 px-4 bg-black">
+    <div className="w-full min-h-screen py-16 px-4 ">
       <div className="max-w-[1240px] mx-auto">
         <h1 className="text-4xl font-bold text-center text-white mb-16">
           Data Analysis Skills
