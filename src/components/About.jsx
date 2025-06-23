@@ -2,82 +2,83 @@ import { motion } from "motion/react";
 import React from "react";
 import {
   FaDatabase,
-  FaChartBar,
-  FaPython,
-  FaLaptopCode,
-  FaChartLine,
+  FaCode,
+  FaBrain,
+  FaRocket,
 } from "react-icons/fa";
+
+const aboutData = {
+  title: "About Me",
+  description: "I am a passionate software developer with a deep love for creating innovative solutions and tackling complex technical challenges. With years of experience in the field, I've developed a comprehensive skill set that allows me to bring ideas to life through code. My approach combines technical expertise with creative problem-solving to deliver high-quality, user-centric applications that make a real impact.",
+  cards: [
+    {
+      icon: FaCode,
+      title: "Development Expertise",
+      description: "Passionate developer specializing in creating modern, efficient, and scalable solutions. Proficient in cutting-edge technologies and best practices for delivering exceptional results."
+    },
+    {
+      icon: FaDatabase,
+      title: "System Architecture",
+      description: "Expert in designing and implementing robust system architectures that prioritize performance, security, and scalability while maintaining clean code practices."
+    },
+    {
+      icon: FaBrain,
+      title: "Problem Solving",
+      description: "Analytical thinker with a proven track record of solving complex technical challenges through innovative solutions and strategic approaches to development."
+    },
+    {
+      icon: FaRocket,
+      title: "Innovation Driven",
+      description: "Committed to pushing technological boundaries and embracing new challenges. Always exploring cutting-edge solutions to deliver exceptional results."
+    }
+  ]
+};
 
 const About = () => {
   return (
     <motion.div 
-      initial={{ opacity: 0, y: 200 }}
+      initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: .5, ease: "easeOut" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: false }}
-      className="w-full h-auto md:h-screen flex flex-col md:flex-row gap-8 items-center px-7 md:px-20 py-16"
+      className="w-full min-h-screen bg-black flex flex-col md:flex-row gap-12 items-center px-8 md:px-24 py-20"
     >
-      <div className="w-full md:w-full flex flex-col gap-6">
+      <div className="w-full flex flex-col gap-10">
         <motion.h2
-          initial={{ opacity: 0, y: 200 }}
+          initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: .5, ease: "easeOut" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: false }}
-          className="text-3xl md:text-4xl font-bold text-center mb-4"
+          className="text-5xl md:text-6xl font-bold text-center mb-10 text-green-400"
         >
-          About Me
+          {aboutData.title}
         </motion.h2>
-        <motion.p 
-          initial={{ opacity: 0, y: 200 }}
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: .5, ease: "easeOut" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: false }}
-          className="text-lg sm:text-2xl text-gray-300 text-justify md:text-left leading-relaxed"
+          className="text-lg text-gray-300 leading-relaxed text-center mb-12"
         >
-          I'm a passionate{" "}
-          <span className="font-bold text-green-400">Data Analyst</span>{" "}
-          specializing in{" "}
-          <span className="font-bold text-green-400">
-            data analysis and visualization
-          </span>
-          . My expertise includes working with{" "}
-          <FaPython className="inline text-yellow-500 mx-1" /> Python,
-          particularly with{" "}
-          <span className="font-bold text-green-400">Pandas</span> and{" "}
-          <span className="font-bold text-green-400">NumPy</span> for advanced
-          data manipulation and analysis.{" "}
-          <FaLaptopCode className="inline text-purple-500 mx-1" /> I'm also
-          proficient in SQL and various data visualization tools.
-        </motion.p>
-        <motion.p 
-          initial={{ opacity: 0, y: 200 }}
+          {aboutData.description}
+        </motion.div>
+        <motion.div 
+          initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: .5, ease: "easeOut" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: false }}
-          className="text-lg sm:text-2xl text-gray-300 text-justify md:text-left leading-relaxed"
+          className="grid grid-cols-1 md:grid-cols-2 gap-10"
         >
-          <FaDatabase className="inline text-green-500 mx-1" /> I've worked
-          extensively with diverse datasets, transforming raw data into
-          meaningful insights through{" "}
-          <span className="font-bold text-green-400">statistical analysis</span>
-          , <span className="font-bold text-green-400">data cleaning</span>, and{" "}
-          <span className="font-bold text-green-400">predictive modeling</span>.
-          My projects have helped businesses make data-driven decisions and
-          optimize their operations for better performance.
-        </motion.p>
-        <motion.p 
-          initial={{ opacity: 0, y: 200 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: .5, ease: "easeOut" }}
-          viewport={{ once: false }}
-          className="text-lg sm:text-2xl text-gray-300 text-justify md:text-left leading-relaxed"
-        >
-          <FaChartBar className="inline text-green-500 mx-1" /> Let's
-          collaborate to transform your data into actionable insights and
-          compelling visualizations that drive strategic business decisions.{" "}
-          <FaChartLine className="inline text-red-500 mx-1" /> Together, we can
-          uncover patterns, trends, and opportunities hidden in your data.
-        </motion.p>
+          {aboutData.cards.map((card, index) => (
+            <div key={index} className="border bg-zinc-950 border-zinc-400/20 hover:scale-105 rounded-2xl p-8 hover:border-green-400/50 transition-all duration-300 backdrop-blur-sm">
+              <card.icon className="text-5xl text-green-400 mb-6" />
+              <h3 className="text-2xl font-bold text-white mb-4">{card.title}</h3>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                {card.description}
+              </p>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </motion.div>
   );

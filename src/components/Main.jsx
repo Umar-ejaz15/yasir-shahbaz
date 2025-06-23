@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Main = () => {
   return (
-    <main className="h-screen px-4 sm:px-7 lg:px-20 bg-black">
+    <main id="home" className="h-screen px-4 sm:px-7 lg:px-20 bg-black">
       <div className="w-full h-full flex flex-col justify-center relative">
         <Gradient />
         <motion.div 

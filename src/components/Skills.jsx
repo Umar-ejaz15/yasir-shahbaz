@@ -151,7 +151,7 @@ const Skills = () => {
                 ease: "easeOut",
               }}
               key={index}
-              className="bg-zinc-950 hover:border hover:border-green-600 hover:bg-zinc-900 backdrop-blur-lg rounded-xl p-6 hover:transform hover:scale-105 transition-all"
+              className="bg-zinc-950 hover:border border border-zinc-400/40 hover:border-green-600 hover:bg-zinc-900 backdrop-blur-lg rounded-xl p-6 hover:transform hover:scale-105 transition-all"
             >
               <div className="flex items-center justify-center mb-4">
                 <skill.icon
